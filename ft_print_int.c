@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 10:51:59 by julian            #+#    #+#             */
-/*   Updated: 2021/07/07 13:49:06 by julian           ###   ########.fr       */
+/*   Updated: 2021/07/08 13:09:23 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_print_int(t_print *tab)
 {
-	int	i;
-	int j;
-	char *s_int;
+	int		i;
+	int		j;
+	char	*s_int;
 
 	i = va_arg(tab->args, int);
 	s_int = ft_itoa(i);

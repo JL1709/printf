@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 14:40:52 by jludt             #+#    #+#             */
-/*   Updated: 2021/07/07 15:27:33 by julian           ###   ########.fr       */
+/*   Updated: 2021/07/08 13:16:33 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
 
 /*
 ** Allocates (with malloc(3)) and returns a string

@@ -6,7 +6,7 @@
 /*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 16:33:20 by jludt             #+#    #+#             */
-/*   Updated: 2021/07/08 12:54:03 by jludt            ###   ########.fr       */
+/*   Updated: 2021/07/08 13:14:33 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ int	ft_printf(const char *format, ...)
 	va_start(tab->args, format);
 	i = 0;
 	return_value = 0;
-	while(format[i])
+	while (format[i])
 	{
 		if (format[i] == '%')
 			i = ft_print_conversion(format, tab, i + 1);
 		else
-			return_value += + write(1, &format[i], 1);
+			return_value += write(1, &format[i], 1);
 		i++;
 	}
 	return_value += tab->total_length;

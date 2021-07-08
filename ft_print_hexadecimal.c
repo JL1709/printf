@@ -6,7 +6,7 @@
 /*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:44:00 by julian            #+#    #+#             */
-/*   Updated: 2021/07/08 11:16:57 by jludt            ###   ########.fr       */
+/*   Updated: 2021/07/08 13:09:01 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 void	ft_print_hexadecimal(t_print *tab, char c)
 {
 	unsigned int	i;
-	int 			j;
-	char 			*s_hexadecimal;
+	int				j;
+	char			*s_hexadecimal;
 
 	i = va_arg(tab->args, unsigned int);
-
 	if (i == 0)
 		tab->total_length += write (1, "0", 1);
 	else
@@ -32,5 +31,4 @@ void	ft_print_hexadecimal(t_print *tab, char c)
 		while (s_hexadecimal[j] != '\0')
 			tab->total_length += write (1, &s_hexadecimal[j++], 1);
 	}
-
 }
