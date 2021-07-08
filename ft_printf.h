@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 13:51:38 by jludt             #+#    #+#             */
-/*   Updated: 2021/07/07 16:14:38 by julian           ###   ########.fr       */
+/*   Updated: 2021/07/08 12:47:54 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ void	ft_print_char(t_print *tab);
 void	ft_print_string(t_print *tab);
 void	ft_print_int(t_print *tab);
 void	ft_print_uint(t_print *tab);
-void	ft_print_hexadecimal(t_print *tab);
+void	ft_print_hexadecimal(t_print *tab, char c);
+void	ft_print_ptr(t_print *tab);
 char	*ft_itoa(int n);
 char	*ft_uitoa(unsigned int n);
+char	*ft_putnbr_base(unsigned long nbr, char *base);
 size_t	ft_strlen(const char *s);
 
 #endif

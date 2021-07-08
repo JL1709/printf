@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: julian <julian@student.42.fr>              +#+  +:+       +#+         #
+#    By: jludt <jludt@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:51:20 by jludt             #+#    #+#              #
-#    Updated: 2021/07/07 16:15:59 by julian           ###   ########.fr        #
+#    Updated: 2021/07/08 12:53:14 by jludt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,15 +19,17 @@ SRC = ft_printf.c \
 		ft_print_int.c \
 		ft_print_uint.c \
 		ft_print_hexadecimal.c \
+		ft_print_ptr.c \
 		./Libft/ft_itoa.c \
 		./Libft/ft_uitoa.c \
+		./Libft/ft_putnbr_base.c \
 		./Libft/ft_strlen.c
 
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror ${SRC}
-	#ar cr $(NAME) *.o
+	gcc -c -Wall -Wextra -Werror ${SRC}
+	ar cr $(NAME) *.o
 
 clean:
 	rm -f *.o

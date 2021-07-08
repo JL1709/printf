@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 16:33:20 by jludt             #+#    #+#             */
-/*   Updated: 2021/07/07 16:19:00 by julian           ###   ########.fr       */
+/*   Updated: 2021/07/08 12:54:03 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int	ft_printf(const char *format, ...)
 	return (return_value);
 }
 
-int	main(void)
-{
+// int	main(void)
+// {
 // 	// printf("char c: comparing printf and ft_printf\n");
 // 	// if (printf("Hello %c %c %c\n", 'A', 'B', 'C') != ft_printf("Hello %c %c %c\n", 'A', 'B', 'C'))
 // 	// 	printf("case 1: should: %i, is: %i\n", printf("Hello %c %c %c\n", 'A', 'B', 'C'), ft_printf("Hello %c %c %c\n", 'A', 'B', 'C'));
@@ -83,4 +83,30 @@ int	main(void)
 // 	// 	printf("case 1: should: %%, \n");
 // 	// 	ft_printf("is: %%\n");
 // 	// }
-}
+
+	// printf("x / X: comparing printf and ft_printf\n");
+	// unsigned int i = 4294967295;
+	// if (printf("hexadecimal_x = %x\n", i) != ft_printf("hexadecimal_x = %x\n", i))
+	// 	printf("should_x: %x, is: %x\n", printf("hexadecimal_x = %x\n", i), ft_printf("hexadecimal_x = %x\n", i));
+	// if (printf("hexadecimal_X = %X\n", i) != ft_printf("hexadecimal_X = %X\n", i))
+	// 	printf("should_X: %X, is: %X\n", printf("hexadecimal_X = %X\n", i), ft_printf("hexadecimal_X = %X\n", i));
+
+	// printf("p: comparing printf and ft_printf\n");
+	// int i_p = 10;
+	// char c_p = 'A';
+	// char *s_p = "BBB";
+
+	// void *ptr1 = &i_p;
+	// void *ptr2 = &c_p; 
+	// void *ptr3 = &s_p;
+	// void *ptr4 = &s_p[0];
+	// printf ("i_p = %p\n", ptr1);
+	// ft_printf ("i_p = %p\n", ptr1);
+	// printf ("c_p = %p\n", ptr2);
+	// ft_printf ("c_p = %p\n", ptr2);
+	// printf ("s_p = %p\n", ptr3);
+	// ft_printf ("s_p = %p\n", ptr3);
+	// printf ("s_p[0] = %p\n", ptr4);
+	// ft_printf ("s_p[0] = %p\n", ptr4);
+
+//}
