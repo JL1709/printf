@@ -6,7 +6,7 @@
 /*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 13:20:19 by julian            #+#    #+#             */
-/*   Updated: 2021/07/08 13:08:12 by jludt            ###   ########.fr       */
+/*   Updated: 2021/07/09 11:38:22 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	ft_print_conversion(const char *format, t_print *tab, int i)
 	if (format[i] == 'x' || format[i] == 'X')
 		ft_print_hexadecimal(tab, format[i]);
 	if (format[i] == '%')
-		tab->total_length += write (1, "%", 1);
+		ft_print_char(tab);
 	return (i);
 }
