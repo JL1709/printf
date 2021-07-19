@@ -6,7 +6,7 @@
 /*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 19:37:15 by julian            #+#    #+#             */
-/*   Updated: 2021/07/07 16:10:33 by julian           ###   ########.fr       */
+/*   Updated: 2021/07/19 11:05:28 by julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_print_string(t_print *tab)
 	char	*s;
 	int		i;
 
-	s = va_arg(tab->args, char *);
+	s = va_arg(tab->ap, char *);
 	if (!s)
 		s = "(null)";
 	i = 0;

@@ -6,36 +6,30 @@
 #    By: julian <julian@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/22 09:51:20 by jludt             #+#    #+#              #
-#    Updated: 2021/07/19 11:54:54 by julian           ###   ########.fr        #
+#    Updated: 2021/07/19 10:33:28 by julian           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = libft.a
 
-SRC = ft_printf.c \
-		ft_print_conversion.c \
-		ft_print_char.c \
-		ft_print_string.c \
-		ft_print_int.c \
-		ft_print_uint.c \
-		ft_print_hexadecimal.c \
-		ft_print_ptr.c \
-		ft_print_perc.c \
+SRC =	ft_itoa.c \
+		ft_putnbr_base.c \
+		ft_strlen.c \
+		ft_uitoa.c
 
 all: $(NAME)
 
 $(NAME):
 	gcc -c -Wall -Wextra -Werror $(SRC)
-	${MAKE} -C Libft/
-	ar cr $(NAME) *.o Libft/*.o
+	ar cr $(NAME) *.o
 
+
+.PHONY: clean fclean re
 
 clean:
-	rm -f *.o Libft/*.o
+	rm -f *.o
 
 fclean: clean
-	rm -f $(NAME) Libft/libft.a
+	rm -f $(NAME)
 
 re : fclean all
-
-.PHONY: all clean fclean re

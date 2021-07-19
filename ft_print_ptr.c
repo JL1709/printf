@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 12:02:46 by jludt             #+#    #+#             */
-/*   Updated: 2021/07/08 13:12:22 by jludt            ###   ########.fr       */
+/*   Updated: 2021/07/19 11:05:14 by julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,12 @@ void	ft_print_ptr(t_print *tab)
 	char			*p_hexadecimal;
 	int				i;
 
-	p = (unsigned long)va_arg(tab->args, void *);
+	p = (unsigned long)va_arg(tab->ap, void *);
+	if (!p)
+	{
+		tab->total_length += write(1, "0x0", 3);
+		return ;
+	}
 	p_hexadecimal = ft_putnbr_base(p, "0123456789abcdef");
 	tab->total_length += write(1, "0x", 2);
 	i = 0;

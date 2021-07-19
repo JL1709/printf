@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 13:15:11 by julian            #+#    #+#             */
-/*   Updated: 2021/07/19 11:04:31 by julian           ###   ########.fr       */
+/*   Created: 2021/06/16 09:56:26 by jludt             #+#    #+#             */
+/*   Updated: 2021/07/19 10:31:55 by julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-void	ft_print_char(t_print *tab)
-{
-	char	c;
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-	c = va_arg(tab->ap, int);
-	tab->total_length += write(1, &c, 1);
-}
+char	*ft_itoa(int n);
+char	*ft_putnbr_base(unsigned long nbr, char *base);
+size_t	ft_strlen(const char *s);
+char	*ft_uitoa(unsigned int n);
+
+#endif

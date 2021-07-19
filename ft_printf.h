@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 13:51:38 by jludt             #+#    #+#             */
-/*   Updated: 2021/07/08 12:47:54 by jludt            ###   ########.fr       */
+/*   Updated: 2021/07/19 11:03:23 by julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include "Libft/libft.h"
+
 
 typedef struct s_print
 {
-	va_list	args;
+	va_list	ap;
 	int		total_length;
 }			t_print;
 
@@ -33,9 +35,6 @@ void	ft_print_int(t_print *tab);
 void	ft_print_uint(t_print *tab);
 void	ft_print_hexadecimal(t_print *tab, char c);
 void	ft_print_ptr(t_print *tab);
-char	*ft_itoa(int n);
-char	*ft_uitoa(unsigned int n);
-char	*ft_putnbr_base(unsigned long nbr, char *base);
-size_t	ft_strlen(const char *s);
+void	ft_print_perc(t_print *tab);
 
 #endif

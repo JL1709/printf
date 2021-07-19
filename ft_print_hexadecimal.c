@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_hexadecimal.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
+/*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:44:00 by julian            #+#    #+#             */
-/*   Updated: 2021/07/08 13:09:01 by jludt            ###   ########.fr       */
+/*   Updated: 2021/07/19 11:04:42 by julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_print_hexadecimal(t_print *tab, char c)
 	int				j;
 	char			*s_hexadecimal;
 
-	i = va_arg(tab->args, unsigned int);
-	if (i == 0)
+	i = va_arg(tab->ap, unsigned int);
+	if (i == 0 || !i)
 		tab->total_length += write (1, "0", 1);
 	else
 	{
