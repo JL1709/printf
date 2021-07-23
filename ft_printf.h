@@ -6,7 +6,7 @@
 /*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 13:51:38 by jludt             #+#    #+#             */
-/*   Updated: 2021/07/23 09:17:55 by jludt            ###   ########.fr       */
+/*   Updated: 2021/07/23 09:27:02 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdio.h>
 # include "Libft/libft.h"
 
-typedef struct
+typedef struct s_printf
 {
 	va_list	ap;
 	int		total_length;

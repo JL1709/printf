@@ -6,7 +6,7 @@
 /*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 16:33:20 by jludt             #+#    #+#             */
-/*   Updated: 2021/07/23 09:19:55 by jludt            ###   ########.fr       */
+/*   Updated: 2021/07/23 09:26:37 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 int	ft_printf(const char *format, ...)
 {
 	t_printf	*data;
-	int		i;
-	int		return_value;
+	int			i;
+	int			return_value;
 
 	data = (t_printf *)malloc(sizeof(t_printf));
 	if (!data)
