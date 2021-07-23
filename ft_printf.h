@@ -6,7 +6,7 @@
 /*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 13:51:38 by jludt             #+#    #+#             */
-/*   Updated: 2021/07/22 17:20:53 by jludt            ###   ########.fr       */
+/*   Updated: 2021/07/23 09:17:55 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@
 # include <stdio.h>
 # include "Libft/libft.h"
 
-typedef struct s_print
+typedef struct
 {
 	va_list	ap;
 	int		total_length;
-}			t_print;
+}			t_printf;
 
 int		ft_printf(const char *format, ...);
-int		ft_print_conversion(const char *f, t_print *tab, int i);
-void	ft_print_char(t_print *tab);
-void	ft_print_string(t_print *tab);
-void	ft_print_int(t_print *tab);
-void	ft_print_uint(t_print *tab);
-void	ft_print_hexadecimal(t_print *tab, char c);
-void	ft_print_ptr(t_print *tab);
+int		ft_print_conversion(const char *f, t_printf *data, int i);
+void	ft_print_char(t_printf *data);
+void	ft_print_string(t_printf *data);
+void	ft_print_int(t_printf *data);
+void	ft_print_uint(t_printf *data);
+void	ft_print_hexadecimal(t_printf *data, char c);
+void	ft_print_ptr(t_printf *data);
 
 #endif

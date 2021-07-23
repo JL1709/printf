@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 13:15:11 by julian            #+#    #+#             */
-/*   Updated: 2021/07/19 11:04:31 by julian           ###   ########.fr       */
+/*   Updated: 2021/07/23 09:12:38 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_char(t_print *tab)
+void	ft_print_char(t_printf *data)
 {
 	char	c;
 
-	c = va_arg(tab->ap, int);
-	tab->total_length += write(1, &c, 1);
+	c = va_arg(data->ap, int);
+	data->total_length += write(1, &c, 1);
 }

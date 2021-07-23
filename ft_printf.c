@@ -6,12 +6,11 @@
 /*   By: jludt <jludt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 16:33:20 by jludt             #+#    #+#             */
-/*   Updated: 2021/07/22 17:30:37 by jludt            ###   ########.fr       */
+/*   Updated: 2021/07/23 09:19:55 by jludt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 /*
 ** It must not do the buffer management like the real printf
@@ -20,28 +19,28 @@
 
 int	ft_printf(const char *format, ...)
 {
-	t_print	*tab;
+	t_printf	*data;
 	int		i;
 	int		return_value;
 
-	tab = (t_print *)malloc(sizeof(t_print));
-	if (!tab)
+	data = (t_printf *)malloc(sizeof(t_printf));
+	if (!data)
 		return (-1);
-	tab->total_length = 0;
-	va_start(tab->ap, format);
+	data->total_length = 0;
+	va_start(data->ap, format);
 	i = 0;
 	return_value = 0;
 	while (format[i])
 	{
 		if (format[i] == '%')
-			i = ft_print_conversion(format, tab, i + 1);
+			i = ft_print_conversion(format, data, i + 1);
 		else
 			return_value += write(1, &format[i], 1);
 		i++;
 	}
-	return_value += tab->total_length;
-	va_end(tab->ap);
-	free(tab);
+	return_value += data->total_length;
+	va_end(data->ap);
+	free(data);
 	return (return_value);
 }
 
@@ -134,60 +133,60 @@ int	ft_printf(const char *format, ...)
 // 	printf("no X = %X ccc\n", 0);
 // }
 
-// int main()
-// {
-//     char *testpointer = NULL;
-//     char *emptystring = "";
-//     int int1 = 0;
-//     int int2 = 0;
-//     int int3 = -0;
-//     int int4 = 0;
-//     // Currently leaking print address (%p)
-//     // also leaking: %x
-//     int ml = ft_printf("Teasdasdasdsdst! %%%%%%%%%%%%%%%% %% %s %d %d %%%%%%%% Das ist ziemlich cool! %% %% %% test mich %u %i %p %x %s %d %p %p \n", "TEST ME", int1, int2, int3, int4, testpointer, int4, NULL, 4, NULL, NULL);
-// 	int pl =    printf("Teasdasdasdsdst! %%%%%%%%%%%%%%%% %% %s %d %d %%%%%%%% Das ist ziemlich cool! %% %% %% test mich %u %i %p %x %s %d %p %p \n", "TEST ME", int1, int2, int3, int4, testpointer, int4, NULL, 4, NULL, NULL);
-//     int ml2 =    ft_printf("A %% AAA %d\n", 0);
-//     int pl2 =       printf("A %% AAA %d\n", 0);
-//     int ml3 =    ft_printf("");
-//     int pl3 =    printf("");
-//     int ml4 =    ft_printf("aa\n");
-//     int pl4 =    printf("aa\n");
-//     int ml5 =    ft_printf("%%\n");
-//     int pl5 =       printf("%%\n");
-//     int ml6 =    ft_printf("%% A %% A %% \n");
-//     int pl6 =       printf("%% A %% A %% \n");
-//     int ml7 =    ft_printf("!!%d %%\n", -2147483647);
-//     int pl7 =       printf("!!%d %%\n", -2147483647);
-//     int ml8 =    ft_printf("!!%d %% %s \n", -123123, emptystring);
-//     int pl8 =       printf("!!%d %% %s \n", -123123, emptystring);
-//     int ml9 =    ft_printf("!!%d %% %s %u %p \n", -123123, emptystring, (unsigned int) 4294967295, emptystring);
-//     int pl9 =       printf("!!%d %% %s %u %p \n", -123123, emptystring, (unsigned int) 4294967295, emptystring);
-//     printf("================\n");
-//     printf("PRINTFLENGTH: %d\n", ml);
-//     printf("PRINTFLENGTH: %d\n", pl);
-//     printf("================\n");
-//     printf("PRINTFLENGTH: %d\n", ml2);
-//     printf("PRINTFLENGTH: %d\n", pl2);
-//     printf("================\n");
-//     printf("PRINTFLENGTH: %d\n", ml3);
-//     printf("PRINTFLENGTH: %d\n", pl3);
-//     printf("================\n");
-//     printf("PRINTFLENGTH: %d\n", ml4);
-//     printf("PRINTFLENGTH: %d\n", pl4);
-//     printf("================\n");
-//     printf("PRINTFLENGTH: %d\n", ml5);
-//     printf("PRINTFLENGTH: %d\n", pl5);
-//     printf("================\n");
-//     printf("PRINTFLENGTH: %d\n", ml6);
-//     printf("PRINTFLENGTH: %d\n", pl6);
-//     printf("================\n");
-//     printf("PRINTFLENGTH: %d\n", ml7);
-//     printf("PRINTFLENGTH: %d\n", pl7);
-//     printf("================\n");
-//     printf("PRINTFLENGTH: %d\n", ml8);
-//     printf("PRINTFLENGTH: %d\n", pl8);
-//     printf("================\n");
-//     printf("PRINTFLENGTH: %d\n", ml9);
-//     printf("PRINTFLENGTH: %d\n", pl9);
-//     return 0;
-// }
+int main()
+{
+    char *testpointer = NULL;
+    char *emptystring = "";
+    int int1 = 0;
+    int int2 = 0;
+    int int3 = -0;
+    int int4 = 0;
+    // Currently leaking print address (%p)
+    // also leaking: %x
+    int ml = ft_printf("Teasdasdasdsdst! %%%%%%%%%%%%%%%% %% %s %d %d %%%%%%%% Das ist ziemlich cool! %% %% %% test mich %u %i %p %x %s %d %p %p \n", "TEST ME", int1, int2, int3, int4, testpointer, int4, NULL, 4, NULL, NULL);
+	int pl =    printf("Teasdasdasdsdst! %%%%%%%%%%%%%%%% %% %s %d %d %%%%%%%% Das ist ziemlich cool! %% %% %% test mich %u %i %p %x %s %d %p %p \n", "TEST ME", int1, int2, int3, int4, testpointer, int4, NULL, 4, NULL, NULL);
+    int ml2 =    ft_printf("A %% AAA %d\n", 0);
+    int pl2 =       printf("A %% AAA %d\n", 0);
+    int ml3 =    ft_printf("");
+    int pl3 =    printf("");
+    int ml4 =    ft_printf("aa\n");
+    int pl4 =    printf("aa\n");
+    int ml5 =    ft_printf("%%\n");
+    int pl5 =       printf("%%\n");
+    int ml6 =    ft_printf("%% A %% A %% \n");
+    int pl6 =       printf("%% A %% A %% \n");
+    int ml7 =    ft_printf("!!%d %%\n", -2147483647);
+    int pl7 =       printf("!!%d %%\n", -2147483647);
+    int ml8 =    ft_printf("!!%d %% %s \n", -123123, emptystring);
+    int pl8 =       printf("!!%d %% %s \n", -123123, emptystring);
+    int ml9 =    ft_printf("!!%d %% %s %u %p \n", -123123, emptystring, (unsigned int) 4294967295, emptystring);
+    int pl9 =       printf("!!%d %% %s %u %p \n", -123123, emptystring, (unsigned int) 4294967295, emptystring);
+    printf("================\n");
+    printf("PRINTFLENGTH: %d\n", ml);
+    printf("PRINTFLENGTH: %d\n", pl);
+    printf("================\n");
+    printf("PRINTFLENGTH: %d\n", ml2);
+    printf("PRINTFLENGTH: %d\n", pl2);
+    printf("================\n");
+    printf("PRINTFLENGTH: %d\n", ml3);
+    printf("PRINTFLENGTH: %d\n", pl3);
+    printf("================\n");
+    printf("PRINTFLENGTH: %d\n", ml4);
+    printf("PRINTFLENGTH: %d\n", pl4);
+    printf("================\n");
+    printf("PRINTFLENGTH: %d\n", ml5);
+    printf("PRINTFLENGTH: %d\n", pl5);
+    printf("================\n");
+    printf("PRINTFLENGTH: %d\n", ml6);
+    printf("PRINTFLENGTH: %d\n", pl6);
+    printf("================\n");
+    printf("PRINTFLENGTH: %d\n", ml7);
+    printf("PRINTFLENGTH: %d\n", pl7);
+    printf("================\n");
+    printf("PRINTFLENGTH: %d\n", ml8);
+    printf("PRINTFLENGTH: %d\n", pl8);
+    printf("================\n");
+    printf("PRINTFLENGTH: %d\n", ml9);
+    printf("PRINTFLENGTH: %d\n", pl9);
+    return 0;
+}
