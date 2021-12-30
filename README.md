@@ -17,7 +17,7 @@ make
 #### 3)  Run program with library
 Include header file to your code
 ```
-#include "pathToPrintfFolder"/ft_printf.h
+#include "pathToPrintfFolder/ft_printf.h"
 ```
 For example (main.c included in repo for test cases):
 ```ruby
