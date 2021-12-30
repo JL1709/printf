@@ -19,7 +19,7 @@ Include header file to your code
 ```
 #include "pathToPrintfFolder"/ft_printf.h
 ```
-For example:
+For example (main.c included for test cases):
 ```ruby
 #include <stdio.h>
 #include "ft_printf.h"
