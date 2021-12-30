@@ -1,5 +1,5 @@
 # printf
-This repo provides an own printf that can handle the following conversions: 
+This repo provides an own printf that can handle the following conversions: cspdiuxX%
 
 ## Installation
 
