@@ -21,7 +21,6 @@ Include header file to your code
 ```
 For example (main.c included in repo for test cases):
 ```ruby
-#include <stdio.h>
 #include "ft_printf.h"
 
 int main(void)
