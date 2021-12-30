@@ -8,7 +8,7 @@ This repo provides an own printf that can handle the following conversions: cspd
 git clone git@github.com:JL1709/printf.git
 ```
 
-#### 2) Execute Makfile (creates library file "libftprintf.a")
+#### 2) Run Makfile (creates library file "libftprintf.a")
 ```
 cd printf/
 make
