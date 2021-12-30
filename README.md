@@ -5,87 +5,41 @@ This repo provides an own printf that can handle the following conversions: cspd
 
 #### 1) Clone this repository 
 ```
-git clone git@github.com:JL1709/Libft.git
+git clone git@github.com:JL1709/printf.git
 ```
 
-#### 2) Execute Makfile (creates library file "libft.a")
+#### 2) Execute Makfile (creates library file "libftprintf.a")
 ```
-cd Libft/
+cd printf/
 make
 ```
 
 #### 3)  Run program with library
-Include header file to you code
+Include header file to your code
 ```
-#include "pathToLibftFolder"/libft.h
+#include "pathToPrintfFolder"/ft_printf.h
 ```
 For example:
 ```ruby
 #include <stdio.h>
-#include "Libft/libft.h"
+#include "ft_printf.h"
 
 int main(void)
 {
-	printf("ft_strlen(\"test\") = %d\n", (int)ft_strlen("test"));
-
+	char c[5] = {'H', 'e', 'l', 'l', 'o'};
+	char *src = "world";
+	ft_printf("%c%c%c%c%c, %s!\n", c[0], c[1], c[2], c[3], c[4], src);
+	
 	return (0);
 }
 ```
 
 Compile your code with library file, e.g.
 ```
-gcc main.c "pathToLibftFolder"/libft.a
+gcc main.c "pathToPrintfFolder"/libft.a
 ```
 
 Run executable
 ```
 ./a.out
 ```
-
-## Supported functions
-- atoi
-- bzero
-- calloc
-- isalnum
-- isalpha
-- isascii
-- isdigit
-- isprint
-- itoa
-- lstadd_back
-- lstadd_front
-- lstclear
-- lstdelone
-- lstiter
-- lstlast
-- lstmap
-- lstnew
-- lstsize
-- memccpy
-- memchr
-- memcmp
-- memcpy  
-- memmove
-- memset
-- putchar_fd
-- putendl_fd
-- putnbr_fd
-- putstr_fd
-- split
-- strchr
-- strdup
-- strjoin
-- strlcat
-- strlcpy
-- strlen
-- strmapi
-- strncmp
-- strnstr
-- strrchr
-- strtrim
-- substr
-- tolower
-- toupper
-		
-Further explanations about the functions can be found inside the code
-
