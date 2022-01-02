@@ -43,4 +43,4 @@ Run executable
 ```
 ./a.out
 ```
-demo.c file provided for testing.  
+demo.c file provided for testing
