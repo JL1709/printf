@@ -36,7 +36,7 @@ int main(void)
 
 Compile your code with library file, e.g.
 ```
-gcc main.c "pathToPrintfFolder"/libft.a
+gcc demo.c "pathToPrintfFolder"/libft.a
 ```
 
 Run executable
