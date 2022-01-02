@@ -11,7 +11,7 @@ git clone git@github.com:JL1709/printf.git
 
 #### 2) Run Makfile (creates library file "libftprintf.a")
 ```
-cd printf/
+cd printf
 make
 ```
 
