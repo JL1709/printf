@@ -20,7 +20,7 @@ Include header file to your code
 ```
 #include "pathToPrintfFolder/ft_printf.h"
 ```
-For example (main.c included in repo for test cases):
+For example:
 ```ruby
 #include "ft_printf.h"
 
