@@ -1,6 +1,5 @@
 # printf
 This repo provides an own printf that can handle the following conversions: cspdiuxX%.  
-demo.c file provided for testing.  
 Tested on macOS Monterey.
 
 ## Installation
@@ -44,3 +43,4 @@ Run executable
 ```
 ./a.out
 ```
+demo.c file provided for testing.  
